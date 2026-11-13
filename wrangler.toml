@@ -1,0 +1,19 @@
+name = "dream-app"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# index.html কে টেক্সট হিসেবে worker-এর ভেতরে ঢোকায়
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = true
+
+[[kv_namespaces]]
+binding = "KV"
+id = "PASTE_KV_ID_HERE"      # wrangler kv namespace create KV
+
+[vars]
+BOT_USERNAME = "DreamSkull_Bot"             # @ ছাড়া
+APP_URL      = "https://dream-app.YOURNAME.workers.dev"  # ১ম ডিপ্লয়ের পর যে URL পাবেন
+ADMIN_IDS    = "7405447154"                    # আপনার Telegram ID
+# secrets: 9189673532:AAHCBa6yGhtUPSuQKzevTFaUiIqgxVGoJHs, WEBHOOK_SECRET, ADMIN_PASS
